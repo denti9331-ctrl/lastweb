@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="apple" viewBox="0 0 32 32">
+    <g stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round">
+      <path fill="currentColor" fill-opacity=".13" d="M16 11c-2.3 0-3.6-2.3-6.7-2.3-3.6 0-5.8 3-5.8 7.1 0 5.7 3.65 11.15 7.55 11.15 2 0 3.1-1.3 4.95-1.3s2.95 1.3 4.95 1.3c3.9 0 7.55-5.45 7.55-11.15 0-4.1-2.2-7.1-5.8-7.1-3.1 0-4.4 2.3-6.7 2.3Z"/>
+      <path fill="none" d="M16 10.8c.2-2.7 1.4-5.3 3.1-7.1M16.2 8.4c-3.2.15-5.65-1.5-6.45-4.2 3.2.1 5.6 1.48 6.45 4.2ZM7.25 15.4c.12-1.55.7-2.55 1.7-3.15"/>
+    </g>
+  </symbol>
+  <symbol id="shoe" viewBox="0 0 32 32">
+    <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path fill="currentColor" fill-opacity=".12" d="M4.8 7.3c2.8.85 4 2.75 5.65 5.7 1.5 2.65 3.35 5.45 7.25 5.45 2.06 0 3.52-.77 5.42-.77 2.44 0 5 1.18 5.8 3.3.62 1.64-1.09 2.64-3.15 2.64h-9.02c-4.48 0-6.58-3.1-8.92-6.45l-.8 6.64H4.72l-.22-8.58c-.12-1.18-.85-2.62-1.65-3.62l1.95-4.3Z"/>
+      <path fill="none" d="M11.8 19.15c1.32 1.79 3.05 2.72 5.5 2.72h8.25M22.9 7.65v5.1m-2.55-2.55h5.1"/>
+    </g>
+  </symbol>
+  <symbol id="drop" viewBox="0 0 32 32">
+    <g stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round">
+      <path fill="currentColor" fill-opacity=".13" d="M16 3.7c-1.9 4.35-4.35 7.4-6.95 10.72-1.85 2.4-2.86 4.51-2.86 6.58a9.81 9.81 0 0 0 19.62 0c0-2.07-1.01-4.18-2.86-6.58C20.35 11.1 17.9 8.05 16 3.7Z"/>
+      <path fill="none" d="M10.05 20.9a5.96 5.96 0 0 0 3.43 5.31"/>
+    </g>
+  </symbol>
+  <symbol id="wolf" viewBox="0 0 32 32">
+    <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path fill="currentColor" fill-opacity=".13" d="M7.1 27.5 8 23.9l-3.9 1 2.7-5.65-.35-4.7L9.2 5.1l4.2 6.45 3.43-6.1 2.37 7.45 3.35 2.68 6.2 2.27-1.38 3.45-5.52 1.32-1.68 3.27-5.05 1.61H7.1Z"/>
+      <path fill="none" d="m17.6 16.4 2.6.55m2.2 3.45 4.85-.65M10 11.45l.9 2.7"/>
+    </g>
+  </symbol>
+</svg>
