@@ -1,0 +1,344 @@
+body[data-theme] #next {
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-weight: 450;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  padding: 22px 44px;
+  min-width: 230px;
+  max-width: 88vw;
+  isolation: isolate;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #f4eee5;
+  text-shadow: 0 2px 18px #050b16;
+  overflow: visible;
+  transition:
+    color 0.4s,
+    scale 0.5s;
+}
+body[data-theme] #next.ready {
+  animation: story-prompt-rise 1.9s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+body[data-theme] #next:hover {
+  translate: -50% 0;
+  scale: 1.04;
+  color: #fff;
+  background: transparent;
+}
+body[data-theme] #controls button {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  font-size: 13px;
+  padding: 13px 24px;
+  background: transparent;
+  color: #e8e6e1;
+  transition:
+    color 0.4s,
+    scale 0.4s;
+}
+body[data-theme] #controls button:hover {
+  background: transparent;
+  color: #fff;
+  translate: 0 0;
+  scale: 1.06;
+}
+body[data-theme] #controls button:before,
+body[data-theme] #next:before {
+  content: "";
+  position: absolute;
+  inset: -3px -10px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.75;
+  transition:
+    opacity 0.5s,
+    transform 0.7s;
+  background: radial-gradient(ellipse, #101822bb, transparent 72%);
+  mask: none;
+  filter: none;
+  transform: none;
+}
+body[data-theme] #controls button:after,
+body[data-theme] #next:after {
+  content: "";
+  position: absolute;
+  inset: -10px -15px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background: var(--control-particles);
+  background-repeat: no-repeat;
+  transition: opacity 0.4s;
+}
+body[data-theme] #controls button:hover:after,
+body[data-theme] #next:hover:after {
+  opacity: 1;
+  animation: control-drift 2.8s ease-in-out infinite;
+}
+body[data-theme="dust"] {
+  --control-particles:
+    radial-gradient(circle at 13% 68%, #efd8ae 0 1px, transparent 2px),
+    radial-gradient(circle at 28% 27%, #ebc889 0 1.5px, transparent 3px),
+    radial-gradient(circle at 68% 80%, #c9b2e8 0 1px, transparent 3px),
+    radial-gradient(circle at 85% 32%, #f7e5c7 0 1.4px, transparent 3px),
+    radial-gradient(circle at 46% 12%, #e0c4f5 0 1px, transparent 3px);
+}
+body[data-theme="water"] {
+  --control-particles:
+    radial-gradient(
+      circle at 15% 64%,
+      transparent 2px,
+      #b3e8edaa 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(circle at 32% 22%, #dbf6ffbb 0 1px, transparent 2px),
+    radial-gradient(
+      circle at 73% 75%,
+      transparent 3px,
+      #97d7e5aa 3.5px,
+      transparent 4.5px
+    ),
+    radial-gradient(
+      circle at 89% 29%,
+      transparent 1px,
+      #cef7ffa8 2px,
+      transparent 3px
+    );
+}
+body[data-theme="water"] #next:before,
+body[data-theme="water"] #controls button:before {
+  background: radial-gradient(ellipse, #173e53bb, transparent 72%);
+}
+body[data-theme="water"] #next.ready {
+  animation: water-prompt-surface 2.2s cubic-bezier(0.16, 0.7, 0.3, 1) both;
+}
+body[data-theme="dust"] #next.ready:after {
+  opacity: 0.8;
+  animation: control-drift 3.4s ease-in-out infinite;
+}
+body[data-theme="water"] #next.ready:after {
+  opacity: 0.8;
+  animation: control-drift 3.5s ease-in-out infinite;
+}
+body[data-theme="dust"] #next:before,
+body[data-theme="dust"] #controls button:before {
+  background: radial-gradient(ellipse, #44334888, transparent 72%);
+}
+body[data-theme="ink"] #next:before,
+body[data-theme="ink"] #controls button:before {
+  background: #080b10;
+  mask: url(./ink-alpha.webp) center/100% 100% no-repeat;
+  inset: -15px -28px;
+  opacity: 0.8;
+}
+body[data-theme="ink"] #next.ready:before {
+  animation: control-ink-spread 2.1s cubic-bezier(0.16, 0.8, 0.3, 1) both;
+}
+body[data-theme="ink"] #controls button:hover:before {
+  transform: scale(1.18, 1.12);
+  opacity: 1;
+}
+body[data-theme="ink"] #next:hover:before {
+  transform: scale(1.08);
+  opacity: 1;
+}
+body[data-theme="ember"] #next:before,
+body[data-theme="ember"] #controls button:before {
+  background: radial-gradient(ellipse, #3d1d22bb, transparent 72%);
+}
+body[data-theme] #scene-nav {
+  gap: 13px;
+}
+body[data-theme] #scene-nav button {
+  width: 32px;
+  height: 28px;
+  border-radius: 0;
+  background: none;
+}
+body[data-theme] #scene-nav button:after {
+  top: 14px;
+  transition:
+    background 0.4s,
+    scale 0.4s;
+}
+body[data-theme="water"] #scene-nav button[aria-current="true"]:after {
+  background: #a8dce6;
+  box-shadow: 0 0 9px #7fcad788;
+}
+body[data-theme="dust"] #scene-nav button[aria-current="true"]:after {
+  background: #e9cda4;
+  box-shadow: 0 0 9px #e3c38b88;
+}
+body[data-theme="ink"] #scene-nav button:after {
+  mask: url(./ink-alpha.webp) center/cover;
+}
+@keyframes story-prompt-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes water-prompt-surface {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes control-drift {
+  0%,
+  to {
+    transform: translateY(3px);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(-8px);
+    opacity: 1;
+  }
+}
+@keyframes control-ink-spread {
+  0% {
+    opacity: 0;
+    transform: scale(0.2, 0.35);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+#red-scene-actor {
+  position: absolute;
+  z-index: 2;
+  bottom: 1%;
+  right: 3%;
+  width: min(78vw, 1100px);
+  height: 76vh;
+  object-fit: contain;
+  object-position: bottom;
+  filter: var(--grade);
+  pointer-events: none;
+}
+#red-scene-actor[hidden] {
+  display: none;
+}
+body[data-tale="redridinghood"] #stage[data-chapter="1"] #red-scene-actor {
+  right: auto;
+  left: 0;
+  width: 70vw;
+}
+body[data-tale="redridinghood"] #stage[data-chapter="3"] #red-scene-actor {
+  height: 72vh;
+  width: 88vw;
+  right: 6%;
+}
+body[data-tale="redridinghood"] #stage[data-chapter="4"] #red-scene-actor {
+  right: auto;
+  left: 2%;
+  width: 72vw;
+}
+body[data-tale="redridinghood"] #stage[data-chapter="5"] #red-scene-actor {
+  width: 40vw;
+  right: 8%;
+}
+body[data-theme="dust"].snow-lesson-ready,
+body[data-theme="ember"].snow-lesson-ready,
+body[data-theme="dust"] #snow-ending,
+body[data-theme="ember"] #snow-ending {
+  background: #11131a;
+}
+body[data-theme="ember"] #cover {
+  background: linear-gradient(110deg, #1c1018, #080b10);
+}
+@media (max-width: 700px) {
+  body[data-theme] #next {
+    font-size: 20px;
+    min-width: 200px;
+    padding: 18px 28px;
+  }
+  body[data-theme] #controls button {
+    font-size: 12px;
+  }
+  #red-scene-actor {
+    width: 100vw !important;
+    left: 0 !important;
+    right: auto !important;
+    height: 60vh !important;
+  }
+  body[data-theme="ember"] #story {
+    z-index: 5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-theme] #next.ready,
+  body[data-theme] #next.ready:before,
+  body[data-theme] #next:after,
+  body[data-theme] #controls button:after {
+    animation: none !important;
+  }
+}
+body.title-waiting #heading {
+  animation: opening-title-float 6s ease-in-out infinite;
+  will-change: transform;
+}
+body.title-waiting #heading p,
+body.title-waiting #heading small,
+body.title-waiting #prev,
+body.title-waiting #scene-nav,
+body.title-waiting #meta,
+body.title-waiting #motion-hint,
+body.title-waiting #mirror-hint {
+  visibility: hidden;
+  pointer-events: none;
+}
+body.title-waiting #read {
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  padding: 18px 38px;
+}
+body.title-waiting #story {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+@keyframes opening-title-float {
+  0%,
+  to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.title-waiting #heading {
+    animation: none;
+  }
+}
+body[data-theme] #next {
+  font-size: clamp(15px, 1.4vw, 19px);
+  padding: 16px 30px;
+  min-width: 180px;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 700px) {
+  body[data-theme] #next {
+    font-size: 15px;
+    padding: 14px 24px;
+    min-width: 160px;
+  }
+}
