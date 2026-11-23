@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko" class="story-loading"
+  ><head
+    ><script>
+      if (new URLSearchParams(location.search).get("entry") === "book")
+        document.documentElement.classList.add("from-book-entry");</script
+    ><style>
+      html.story-loading:before {
+        content: "Loading";
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        background: #0b1017;
+        color: #dedbd3;
+        font:
+          22px Georgia,
+          serif;
+        letter-spacing: 0.12em;
+      }
+      html.story-loading body {
+        visibility: hidden;
+      }</style
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width,initial-scale=1" /><meta
+      name="theme-color"
+      content="#11151c" /><meta
+      name="description"
+      content="잔혹동화의 시작과 끝을 여섯 장면의 그림과 함께 읽는 이야기" /><title
+      >Dark Fairy Tale</title
+    ><link rel="stylesheet" href="../tales/reader.css?v=4" /><script
+      type="module"
+      src="../tales/reader.js?v=60"
+    ></script
+    ><link rel="stylesheet" href="../tales/scene-color.css?v=1" /><link
+      rel="stylesheet"
+      href="../redridinghood/ending-faq.css" /><link
+      rel="stylesheet"
+      href="../tales/snow-ending.css" /><link
+      rel="stylesheet"
+      href="../tales/story-controls.css?v=3" /><link
+      rel="stylesheet"
+      href="../tales/tale-transitions.css?v=1" /><link
+      rel="stylesheet"
+      href="../tales/scene-stability.css?v=1" /><link
+      rel="stylesheet"
+      href="../tales/reader-ui.css?v=5" /><link
+      rel="stylesheet"
+      href="../butterfly-loading.css?v=4" /><link
+      rel="stylesheet"
+      href="../site-cursor.css?v=1" /></head
+  ><body data-tale="cinderella"
+    ><div
+      class="butterfly-story-loader"
+      role="status"
+      aria-label="이야기 준비 중"
+      ><div class="butterfly-loader-swarm" aria-hidden="true"
+        ><i class="butterfly-loader-flight" style="--i: 0"
+          ><svg viewBox="0 0 100 80">
+            <defs>
+              <radialGradient id="story-wing-0">
+                <stop stop-color="#f5fbff" />
+                <stop offset=".45" stop-color="#79c9ef" />
+                <stop offset="1" stop-color="#4676b4" />
+              </radialGradient>
+            </defs>
+            <g fill="url(#story-wing-0)">
+              <path
+                class="butterfly-loader-wing"
+                d="M49 40C34 5 4 1 8 25C10 40 26 45 40 44C15 44 18 70 32 65C42 62 47 49 49 40Z"
+              />
+              <path
+                class="butterfly-loader-wing right"
+                d="M51 40C66 5 96 1 92 25C90 40 74 45 60 44C85 44 82 70 68 65C58 62 53 49 51 40Z"
+              />
+            </g>
+            <path d="M50 28Q46 43 50 56Q54 43 50 28" fill="#e0ecf5" /></svg></i
+        ><i class="butterfly-loader-flight" style="--i: 1"
+          ><svg viewBox="0 0 100 80">
+            <defs>
+              <radialGradient id="story-wing-1">
+                <stop stop-color="#f5fbff" />
+                <stop offset=".45" stop-color="#79c9ef" />
+                <stop offset="1" stop-color="#4676b4" />
+              </radialGradient>
+            </defs>
+            <g fill="url(#story-wing-1)">
+              <path
+                class="butterfly-loader-wing"
+                d="M49 40C34 5 4 1 8 25C10 40 26 45 40 44C15 44 18 70 32 65C42 62 47 49 49 40Z"
+              />
+              <path
+                class="butterfly-loader-wing right"
+                d="M51 40C66 5 96 1 92 25C90 40 74 45 60 44C85 44 82 70 68 65C58 62 53 49 51 40Z"
+              />
+            </g>
+            <path d="M50 28Q46 43 50 56Q54 43 50 28" fill="#e0ecf5" /></svg></i
+        ><i class="butterfly-loader-flight" style="--i: 2"
+          ><svg viewBox="0 0 100 80">
+            <defs>
+              <radialGradient id="story-wing-2">
+                <stop stop-color="#f5fbff" />
+                <stop offset=".45" stop-color="#79c9ef" />
+                <stop offset="1" stop-color="#4676b4" />
+              </radialGradient>
+            </defs>
+            <g fill="url(#story-wing-2)">
+              <path
+                class="butterfly-loader-wing"
+                d="M49 40C34 5 4 1 8 25C10 40 26 45 40 44C15 44 18 70 32 65C42 62 47 49 49 40Z"
+              />
+              <path
+                class="butterfly-loader-wing right"
+                d="M51 40C66 5 96 1 92 25C90 40 74 45 60 44C85 44 82 70 68 65C58 62 53 49 51 40Z"
+              />
+            </g>
+            <path d="M50 28Q46 43 50 56Q54 43 50 28" fill="#e0ecf5" /></svg></i
+        ><i class="butterfly-loader-flight" style="--i: 3"
+          ><svg viewBox="0 0 100 80">
+            <defs>
+              <radialGradient id="story-wing-3">
+                <stop stop-color="#f5fbff" />
+                <stop offset=".45" stop-color="#79c9ef" />
+                <stop offset="1" stop-color="#4676b4" />
+              </radialGradient>
+            </defs>
+            <g fill="url(#story-wing-3)">
+              <path
+                class="butterfly-loader-wing"
+                d="M49 40C34 5 4 1 8 25C10 40 26 45 40 44C15 44 18 70 32 65C42 62 47 49 49 40Z"
+              />
+              <path
+                class="butterfly-loader-wing right"
+                d="M51 40C66 5 96 1 92 25C90 40 74 45 60 44C85 44 82 70 68 65C58 62 53 49 51 40Z"
+              />
+            </g>
+            <path d="M50 28Q46 43 50 56Q54 43 50 28" fill="#e0ecf5" /></svg></i
+        ><i class="butterfly-loader-flight" style="--i: 4"
+          ><svg viewBox="0 0 100 80">
+            <defs>
+              <radialGradient id="story-wing-4">
+                <stop stop-color="#f5fbff" />
+                <stop offset=".45" stop-color="#79c9ef" />
+                <stop offset="1" stop-color="#4676b4" />
+              </radialGradient>
+            </defs>
+            <g fill="url(#story-wing-4)">
+              <path
+                class="butterfly-loader-wing"
+                d="M49 40C34 5 4 1 8 25C10 40 26 45 40 44C15 44 18 70 32 65C42 62 47 49 49 40Z"
+              />
+              <path
+                class="butterfly-loader-wing right"
+                d="M51 40C66 5 96 1 92 25C90 40 74 45 60 44C85 44 82 70 68 65C58 62 53 49 51 40Z"
+              />
+            </g>
+            <path
+              d="M50 28Q46 43 50 56Q54 43 50 28"
+              fill="#e0ecf5"
+            /></svg></i></div
+      ><div class="story-loader-copy"
+        ><svg class="story-loader-icon" aria-hidden="true" focusable="false">
+          <use href="../assets/tale-loading-icons.svg?v=2#shoe"></use></svg
+        ><span class="story-loader-track" aria-hidden="true"></span
+        ><span class="butterfly-loader-word">Loading</span></div
+      ></div
+    ><header
+      ><a href="../index.html?return=library">동화책으로</a
+      ><span class="brand">DARK FAIRY TALE</span
+      ><span class="edition"></span></header
+    ><div id="stage"
+      ><div id="shade"></div
+      ><canvas id="hover-canvas" aria-hidden="true"></canvas
+      ><div id="cover"></div
+      ><div id="heading"><small></small><h1></h1><p></p></div
+      ><main id="story" aria-live="polite"
+        ><p></p><button id="sentence-next">계속 읽기 →</button></main
+      ><button id="next" hidden>다음 장면 ↓</button
+      ><div id="controls"
+        ><button id="prev" aria-label="이전 장면">←</button
+        ><button id="read" aria-expanded="false" aria-controls="story"
+          >이야기 읽기</button
+        ></div
+      ><div id="meta"
+        ><span id="number"></span><i></i><span id="label"></span></div
+      ><nav id="scene-nav" aria-label="여섯 장면 선택"></nav
+      ><div id="ending-links" hidden></div
+      ><a id="source" target="_blank" rel="noopener noreferrer" hidden
+        >원전 읽기 ↗</a
+      ><span id="motion-hint">SCROLL TO TURN THE PAGE</span
+      ><div id="progress"><span></span></div></div
+    ><div id="rail" aria-hidden="true"></div
+    ><noscript>이야기를 읽으려면 자바스크립트를 켜주세요</noscript></body
+  ></html
+>
