@@ -1,0 +1,255 @@
+.butterfly-loader-swarm {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.butterfly-loader-flight {
+  position: absolute;
+  left: 50%;
+  top: 43%;
+  display: block;
+  width: calc(29px + var(--i) * 5px);
+  height: 48px;
+  animation: unified-butterfly-flight calc(7s + var(--i) * 1.1s)
+    calc(var(--i) * -2.3s) ease-in-out infinite;
+}
+.butterfly-loader-flight svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 6px #4fa1da88);
+}
+.butterfly-loader-wing {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: unified-butterfly-flutter 0.32s ease-in-out infinite alternate;
+}
+.butterfly-loader-wing.right {
+  animation-delay: -0.08s;
+}
+.return-loader-copy {
+  position: relative;
+  z-index: 1;
+}
+#collection-return-loader,
+.butterfly-story-loader,
+.butterfly-library-loader {
+  background: #0b111b;
+  color: #e5e9ef;
+}
+.butterfly-story-loader,
+.butterfly-library-loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  visibility: visible;
+  place-items: center;
+  pointer-events: auto;
+}
+html.story-loading:before,
+html.library-loading:before {
+  display: none;
+}
+html.story-loading .butterfly-story-loader,
+html.library-loading .butterfly-library-loader {
+  display: grid;
+}
+.butterfly-loader-word {
+  font:
+    italic 400 40px Georgia,
+    serif;
+  letter-spacing: 0.04em;
+  position: relative;
+  z-index: 1;
+  color: #e7ecf3;
+}
+body.library-page .forest-journey .main-intro__copy h1 {
+  color: #e2e5eb;
+}
+body.library-page .main-intro__eyebrow,
+body.library-page .main-intro__description {
+  color: #b6bdc8;
+}
+body.library-page .journey-caption {
+  color: #e0e5ed;
+}
+body.library-page .journey-caption span,
+body.library-page .journey-progress span {
+  color: #abb4c1;
+}
+body.library-page .journey-open {
+  color: #e4e8ef;
+  border-color: #929dac66;
+}
+body.library-page .journey-open small,
+body.library-page .journey-open > span,
+body.library-page .main-intro__scroll {
+  color: #b4bfcd;
+}
+@keyframes unified-butterfly-flutter {
+  0% {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0.22);
+  }
+}
+@keyframes unified-butterfly-flight {
+  0%,
+  to {
+    transform: translate(-32vw, 12vh) rotate(-25deg);
+  }
+  25% {
+    transform: translate(-16vw, -24vh) rotate(20deg);
+  }
+  50% {
+    transform: translate(25vw, -10vh) rotate(35deg);
+  }
+  75% {
+    transform: translate(15vw, 24vh) rotate(-20deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .butterfly-loader-flight,
+  .butterfly-loader-wing {
+    animation: none;
+  }
+  .butterfly-loader-flight {
+    left: calc(12% + var(--i) * 17%);
+    top: calc(24% + var(--i) * 3%);
+  }
+}
+
+/* Keep the opening scene readable while optional effects initialize. */
+.story-enhancing .butterfly-story-loader {
+  display: grid;
+  inset: auto max(16px, env(safe-area-inset-right))
+    max(70px, env(safe-area-inset-bottom)) auto;
+  width: 82px;
+  height: 58px;
+  border-radius: 12px;
+  background: rgba(11, 17, 27, 0.78);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  animation: story-indicator-in 0.2s 0.65s forwards;
+}
+.story-enhancing .butterfly-loader-swarm {
+  transform: scale(0.3);
+}
+.story-enhancing .butterfly-loader-word {
+  font-size: 13px;
+  align-self: end;
+  margin-bottom: 6px;
+}
+@keyframes story-indicator-in {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-enhancing .butterfly-loader-swarm {
+    display: none;
+  }
+}
+.butterfly-story-loader {
+  --tale-loader-ink: #dae8ef;
+}
+[data-tale="redridinghood"] .butterfly-story-loader {
+  --tale-loader-ink: #d8a9a8;
+}
+[data-tale="cinderella"] .butterfly-story-loader {
+  --tale-loader-ink: #c4d9ed;
+}
+[data-tale="snowwhite"] .butterfly-story-loader {
+  --tale-loader-ink: #ebb1b4;
+}
+[data-tale="mermaid"] .butterfly-story-loader {
+  --tale-loader-ink: #abd6d9;
+}
+
+.story-loader-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+  width: min(142px, 50vw);
+  color: var(--tale-loader-ink);
+}
+.story-loader-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  animation: tale-loader-hop 1.5s ease-in-out infinite;
+}
+html.from-book-entry.story-loading {
+  background: #06070b;
+}
+html.from-book-entry.story-loading .butterfly-story-loader {
+  display: none;
+}
+.story-loader-track {
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+  background: color-mix(in srgb, currentColor 24%, transparent);
+}
+.story-loader-track::before {
+  content: "";
+  display: block;
+  width: 45%;
+  height: 100%;
+  background: currentColor;
+  animation: tale-loader-sweep 1.25s ease-in-out infinite alternate;
+}
+.story-loader-copy .butterfly-loader-word {
+  font-size: 24px;
+  color: #e4eaf1;
+}
+.story-enhancing .butterfly-story-loader {
+  width: 90px;
+  height: 78px;
+}
+.story-enhancing .story-loader-copy {
+  width: 44px;
+  gap: 4px;
+}
+.story-enhancing .story-loader-icon {
+  width: 29px;
+  height: 29px;
+}
+.story-enhancing .story-loader-copy .butterfly-loader-word {
+  font-size: 11px;
+  margin: 0;
+}
+@keyframes tale-loader-sweep {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(123%);
+  }
+}
+@keyframes tale-loader-hop {
+  0%,
+  38%,
+  100% {
+    translate: 0 0;
+  }
+  18% {
+    translate: 0 -6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .story-loader-icon {
+    animation: none;
+  }
+  .story-loader-track::before {
+    animation: none;
+    transform: translateX(60%);
+  }
+}

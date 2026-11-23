@@ -1,0 +1,289 @@
+body[data-tale="redridinghood"] {
+  background: #141112;
+  cursor: auto;
+}
+body[data-tale="redridinghood"] :is(button, a) {
+  cursor: pointer;
+}
+body[data-tale="redridinghood"] #stage {
+  background: #141112;
+}
+body[data-tale="redridinghood"] #stage::after,
+body[data-tale="redridinghood"] #stage > #shade,
+body[data-tale="redridinghood"] #stage > #hover-canvas {
+  display: none;
+}
+body[data-tale="redridinghood"] #stage > .picture {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--red-scene-focus, 50%) center;
+  scale: 1.03;
+  filter: none;
+}
+body[data-tale="redridinghood"] #stage #heading {
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  text-align: center;
+}
+body[data-tale="redridinghood"] #stage #heading h1 {
+  color: #e0dcd7;
+  -webkit-text-stroke: 0;
+}
+body[data-tale="redridinghood"] #stage #heading.show:not(.gone) h1 {
+  animation: red-title-emerge 1.35s cubic-bezier(0.22, 0.68, 0.23, 1) both;
+}
+@keyframes red-title-emerge {
+  from {
+    opacity: 0;
+    filter: blur(13px);
+    transform: translateY(9px);
+  }
+  42% {
+    opacity: 0.56;
+    filter: blur(3.5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body[data-tale="redridinghood"] #stage #heading.show:not(.gone) h1 {
+    animation: none;
+  }
+}
+@media (max-width: 700px) {
+  body[data-tale="redridinghood"] #stage[data-chapter="0"] {
+    --red-scene-focus: 65%;
+  }
+  body[data-tale="redridinghood"] #stage[data-chapter="2"] {
+    --red-scene-focus: 73%;
+  }
+  body[data-tale="redridinghood"] #stage[data-chapter="3"] {
+    --red-scene-focus: 66%;
+  }
+  body[data-tale="redridinghood"] #stage[data-chapter="4"] {
+    --red-scene-focus: 63%;
+  }
+}
+
+body[data-tale="redridinghood"] #stage :is(#heading, #story) {
+  isolation: isolate;
+  overflow: visible;
+}
+body[data-tale="redridinghood"] #stage #heading::before {
+  content: "";
+  display: block !important;
+  position: absolute;
+  z-index: -1;
+  inset: -35% 3%;
+  background: radial-gradient(
+    ellipse,
+    #110e0ed4 0%,
+    #110e0e6b 43%,
+    transparent 73%
+  );
+  mask: none;
+  opacity: 1;
+  pointer-events: none;
+}
+body[data-tale="redridinghood"] #stage #story::before {
+  display: none !important;
+}
+body[data-tale="redridinghood"] #stage #story > p {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+@media (min-width: 701px) {
+  body[data-tale="redridinghood"]
+    #stage
+    #story:is(
+      [data-place="upper-left"],
+      [data-place="upper-right"],
+      [data-place="lower-right"]
+    )
+    > p {
+    margin-inline: 0 auto;
+  }
+}
+.red-line-fog {
+  position: absolute;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse,
+    #110e0ed4 0%,
+    #110e0e82 49%,
+    #110e0e25 73%,
+    transparent 94%
+  );
+  filter: blur(0.32em);
+  pointer-events: none;
+}
+body[data-tale="redridinghood"] #stage #story > p > em {
+  position: relative;
+  z-index: 1;
+}
+body[data-tale="redridinghood"] #stage #heading :is(h1, p, small),
+body[data-tale="redridinghood"] #stage #story :is(p, em),
+body[data-tale="redridinghood"]
+  #stage
+  :is(
+    #read,
+    #prev,
+    #next,
+    #sentence-next,
+    #source,
+    #ending-links a,
+    #motion-hint,
+    .red-scene-action,
+    .red-scene-caption
+  ) {
+  text-shadow:
+    0 0.065em 0.12em #070606dc,
+    0 0.14em 0.31em #070606bc;
+}
+.red-scene-effects,
+.red-scene-effects canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.red-scene-effects {
+  z-index: 2;
+}
+.red-scene-action {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  min-height: 44px;
+  min-width: 52px;
+  padding: 2px 8px;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: #eee5da;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  touch-action: none;
+  pointer-events: auto;
+}
+.red-scene-action:focus-visible {
+  outline: 1px solid #e4d8cd;
+  outline-offset: 2px;
+}
+.red-scene-caption {
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  transform: translateX(-50%);
+  width: min(80%, 650px);
+  margin: 0;
+  padding: 8px 14px;
+  color: #f0e9e1;
+  background: none;
+  text-align: center;
+  font-size: clamp(13px, 2.2vw, 19px);
+}
+body.transition-running .red-scene-action {
+  pointer-events: none;
+}
+
+body[data-tale="redridinghood"].title-waiting #stage #read {
+  text-shadow:
+    0 1px 3px #000,
+    0 0 9px #000;
+}
+.red-basket-click > span {
+  display: inline-block;
+  animation: red-basket-float 2.45s ease-in-out infinite;
+}
+@keyframes red-basket-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .red-basket-click > span {
+    animation: none;
+  }
+}
+body[data-tale="redridinghood"] #stage :is(#controls button, #next)::before,
+body[data-tale="redridinghood"]
+  #stage
+  :is(#controls button, #next):hover::before {
+  background: radial-gradient(ellipse, #000b, #0005 43%, transparent 75%);
+  opacity: 0.85;
+  animation: none;
+  transform: none;
+}
+body[data-tale="redridinghood"]
+  #stage
+  :is(#controls button, #next, #sentence-next)::after {
+  content: none;
+}
+body[data-tale="redridinghood"]
+  #stage
+  :is(#controls button, #sentence-next, .red-scene-action):hover {
+  background: transparent;
+  color: #e8e3dd;
+  text-shadow:
+    0 1px 3px #000,
+    0 0 8px #000a;
+  translate: none;
+  scale: none;
+}
+body[data-tale="redridinghood"] #stage .red-scene-caption {
+  width: fit-content;
+  max-width: 80%;
+  isolation: isolate;
+  text-shadow:
+    0 1px 3px #000,
+    0 0 8px #000b;
+}
+body[data-tale="redridinghood"] #stage .red-scene-caption::before {
+  content: "";
+  position: absolute;
+  inset: -0.3em -1.2em;
+  z-index: -1;
+  background: radial-gradient(ellipse, #000c, #0006 47%, transparent 80%);
+  filter: blur(0.25em);
+  pointer-events: none;
+}
+body[data-tale="redridinghood"] #stage .red-prop-control {
+  width: 64px;
+  height: 54px;
+  border-radius: 50%;
+}
+body[data-tale="redridinghood"] #stage .red-house-control,
+body[data-tale="redridinghood"] #stage .red-house-control:hover {
+  position: absolute;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  scale: none;
+  translate: none;
+  pointer-events: auto;
+}
+body.transition-running #stage .red-house-control {
+  pointer-events: none;
+}
+body[data-tale="redridinghood"] #stage #next,
+body[data-tale="redridinghood"] #stage #next:hover {
+  translate: -50% 0;
+  scale: 1;
+  transition-property: color, text-shadow;
+}

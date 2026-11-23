@@ -1,0 +1,31 @@
+.library-return-loading body {
+  visibility: hidden;
+}
+#collection-return-loader {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #020408;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  pointer-events: auto;
+}
+html.library-return-loading #collection-return-loader,
+#collection-return-loader.is-complete {
+  display: grid;
+  place-items: center;
+}
+#collection-return-loader.is-complete {
+  opacity: 0;
+  pointer-events: none;
+}
+.return-loader-copy {
+  width: min(310px, 68vw);
+}
+@media (prefers-reduced-motion: reduce) {
+  #collection-return-loader {
+    transition: none;
+  }
+}

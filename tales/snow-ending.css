@@ -1,0 +1,133 @@
+body.snow-lesson-ready {
+  overflow-y: auto;
+  background: #030609;
+}
+body.snow-lesson-ready #stage {
+  transform-origin: 50% 35%;
+  will-change: transform, opacity;
+  box-shadow: 0 30px 90px #0009;
+}
+#snow-ending {
+  margin-top: 105svh;
+  min-height: 90svh;
+  position: relative;
+  z-index: 2;
+  background: #030609 !important;
+  padding-bottom: 15px;
+}
+#snow-ending[hidden] {
+  display: none;
+}
+#snow-ending-hint {
+  position: absolute;
+  z-index: 7;
+  left: 50%;
+  bottom: 17%;
+  translate: -50% 0;
+  margin: 0;
+  font: 10px SUIT;
+  color: #cec6b5;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+}
+#snow-ending-hint[hidden] {
+  display: none;
+}
+#snow-ending header {
+  position: relative;
+}
+#snow-ending .ending-faq {
+  padding-top: 80px;
+}
+#snow-ending .faq-aside {
+  animation: snow-question-float 6s ease-in-out infinite;
+}
+#snow-ending .faq-item button {
+  font-family: SUIT, sans-serif;
+}
+#snow-ending .ending-letter-word {
+  font-family:
+    Arial Black,
+    Arial,
+    sans-serif;
+}
+#snow-ending .ending-footer-bottom a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+body.snow-ending-open > header {
+  opacity: 0.3;
+  transition: opacity 0.8s;
+}
+body.snow-ending-open > header:hover {
+  opacity: 1;
+}
+body.snow-ending-open .cursor-dot {
+  opacity: 0;
+}
+body.snow-ending-open.ending-passive .cursor-dot.visible {
+  opacity: 1;
+  width: 27px;
+  height: 27px;
+  border-color: #f2f2ec60;
+  background: #f2f2ec16;
+}
+#snow-ending button,
+#snow-ending a {
+  cursor: pointer;
+}
+#snow-ending .ending-letter {
+  cursor: default;
+}
+#snow-ending button:hover {
+  translate: none;
+  background: none;
+  color: #fff;
+}
+#snow-ending .faq-answer {
+  border-radius: 0;
+}
+#snow-ending .faq-item.is-open .faq-answer {
+  background: none;
+}
+#snow-ending .ending-footer-bottom {
+  align-items: center;
+}
+#snow-ending .faq-answer p {
+  font-family: SUIT, sans-serif;
+}
+@keyframes snow-question-float {
+  0%,
+  to {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+@media (max-width: 700px) {
+  #snow-ending .ending-faq {
+    padding-top: 65px;
+  }
+  #snow-ending .ending-footer-bottom {
+    flex-wrap: wrap;
+    row-gap: 15px;
+  }
+  #snow-ending-hint {
+    font-size: 9px;
+    white-space: nowrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #snow-ending .faq-aside {
+    animation: none;
+  }
+  body.snow-lesson-ready #stage {
+    will-change: auto;
+  }
+}
+body.snow-ending-open > header,
+body.snow-ending-open > header:hover {
+  opacity: 0;
+  pointer-events: none;
+}

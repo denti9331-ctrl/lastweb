@@ -1,0 +1,76 @@
+body:not(.snow-lesson-ready) {
+  overflow: hidden;
+}
+#rail {
+  display: none;
+}
+body[data-theme] #stage #shade {
+  z-index: 3;
+  pointer-events: none;
+}
+body[data-theme] #stage #hover-canvas {
+  z-index: 1;
+}
+body[data-theme] #stage #snow-objects,
+body[data-theme] #stage #mermaid-life,
+body[data-theme] #stage #snow-drama,
+body[data-theme] #stage #story-garden {
+  z-index: 2;
+}
+body[data-theme] #stage .picture {
+  transition: none;
+}
+#stage[data-chapter]:after {
+  opacity: 0.7 !important;
+}
+#scene-guard {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  background: #080b10;
+  opacity: 0;
+  pointer-events: none;
+}
+#cover {
+  z-index: 4;
+}
+body.scene-preparing #snow-drama > div {
+  transition: none !important;
+}
+body[data-theme="ink"] #snow-drama .drama-coffin-rest,
+body[data-theme="ink"] #snow-drama .drama-awake,
+body[data-theme="ink"].snow-danger #stage .picture,
+body[data-theme="ink"] #stage #snow-objects {
+  filter: var(--grade);
+}
+body[data-theme="ink"] #stage #mirror-foreground,
+body[data-theme="ink"] #stage #mirror-mist {
+  z-index: 2;
+}
+header .brand {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  text-align: center;
+  white-space: nowrap;
+}
+header .edition {
+  margin-left: auto;
+}
+body.title-waiting #stage[data-chapter="0"] #heading small,
+body.title-waiting #stage[data-chapter="0"] #heading p {
+  visibility: hidden;
+}
+@media (max-width: 700px) {
+  header .brand {
+    max-width: 60%;
+    font-size: 11px;
+  }
+}
+body[data-theme="water"] #next.ready {
+  background: transparent;
+  border: 0;
+}
+body.transition-running {
+  overflow: hidden !important;
+}

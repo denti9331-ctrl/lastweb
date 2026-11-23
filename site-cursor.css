@@ -1,0 +1,16 @@
+@layer site-cursor {
+  @media (pointer: fine) and (hover: hover) {
+    html,
+    html * {
+      cursor:
+        url("assets/site-cursor.svg") 11 11,
+        auto !important;
+    }
+
+    .cursor-dot,
+    .tale-mouse-dot,
+    .book-cursor {
+      display: none !important;
+    }
+  }
+}
