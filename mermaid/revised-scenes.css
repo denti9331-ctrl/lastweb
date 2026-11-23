@@ -1,0 +1,112 @@
+.mermaid-revised-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+}
+.mermaid-revised-scene.is-ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+#stage:has(.mermaid-revised-scene.is-ready) {
+  background: #101319;
+}
+#stage:has(.mermaid-revised-scene.is-ready) > .picture {
+  opacity: 0 !important;
+}
+#stage .mermaid-finale {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.mermaid-finale canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.mermaid-finale-lift {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  appearance: none;
+  color: #d2dfdf;
+  border: 0;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  background: transparent;
+  font:
+    12px Georgia,
+    serif;
+  letter-spacing: 0.17em;
+  text-shadow:
+    0 1px 5px #071416,
+    0 0 12px #8bc1bf80;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 1;
+}
+.mermaid-finale-lift:is(:hover, :focus-visible) {
+  color: #fff;
+  text-shadow: 0 0 9px #b0d8d6;
+}
+.mermaid-finale-lift:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 0.32em;
+}
+#stage:has(.mermaid-finale) .picture {
+  translate: var(--foam-camera-x, 0px) var(--foam-camera-y, 0px);
+  scale: var(--foam-camera-scale, 1.04);
+  transform-origin: 50% 50%;
+}
+#stage .mermaid-finale-water-plate {
+  visibility: visible;
+  opacity: 0;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent calc(var(--water-edge, 112%) - 24%),
+    #000 var(--water-edge, 112%)
+  );
+}
+.mermaid-finale::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse at var(--beam-origin, 71%) 9%,
+      #e6d4aec2 0%,
+      transparent 47%
+    ),
+    conic-gradient(
+      from var(--beam-angle, 158deg) at var(--beam-origin, 71%) 2%,
+      transparent 0deg,
+      #e6dfb854 9deg,
+      transparent 18deg,
+      #b9d8bd37 29deg,
+      transparent 44deg
+    ),
+    radial-gradient(ellipse at 63% 63%, #5b9e9b30, transparent 53%);
+  mix-blend-mode: screen;
+  opacity: var(--water-light, 0.12);
+}
+@media (max-width: 699px) {
+  #stage[data-chapter="5"] .picture {
+    object-position: 67% center;
+  }
+}
+#stage .mermaid-kingdom {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}

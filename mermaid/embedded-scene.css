@@ -1,0 +1,55 @@
+html.embedded,
+html.embedded body {
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+html.embedded main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+html.embedded header,
+html.embedded footer a {
+  display: none;
+}
+html.embedded .scene {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: max(100vw, min(135vw, calc(100vh * 1672 / 941)));
+  height: max(100vh, calc(100vw * 941 / 1672));
+  transform: translate(-50%, -50%);
+  border: 0;
+}
+html.embedded .scene > img {
+  object-fit: fill;
+}
+html.embedded footer {
+  position: absolute;
+  inset: auto 5% 20%;
+  z-index: 5;
+  justify-content: center;
+  width: auto;
+  margin: 0;
+  font-size: clamp(11px, 1.5vw, 14px);
+  text-align: center;
+  text-shadow:
+    0 1px 6px #000,
+    0 1px 12px #000;
+  pointer-events: none;
+}
+html.embedded footer p {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+html.embedded #reset {
+  pointer-events: auto;
+}
+@media (max-width: 650px) {
+  html.embedded footer {
+    inset: auto 6% 24%;
+  }
+}
